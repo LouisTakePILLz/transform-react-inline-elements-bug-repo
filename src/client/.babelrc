@@ -1,0 +1,32 @@
+{
+    "presets": [
+        "env",
+        "react",
+        "stage-0",
+    ],
+    "plugins": [
+        "transform-decorators-legacy",
+        ["transform-builtin-extend", {
+            "globals": ["Error", "Array"]
+        }],
+        ["import",
+            [
+                { libraryName: "antd", libraryDirectory: "lib", style: true },
+                {
+                    libraryName: "ant-design-pro",
+                    libraryDirectory: "lib",
+                    camel2DashComponentName: false
+                }
+            ]
+        ],
+    ],
+    "env": {
+        "production": {
+            "plugins": [
+                "transform-react-remove-prop-types",
+                "transform-react-constant-elements",
+                "transform-react-inline-elements"
+            ]
+        }
+    }
+}
